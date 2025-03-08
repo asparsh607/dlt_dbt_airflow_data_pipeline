@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: ingestion
+    database: weather_pipeline
+    schema: weather_pipeline
+    tables:
+      - name: cities
