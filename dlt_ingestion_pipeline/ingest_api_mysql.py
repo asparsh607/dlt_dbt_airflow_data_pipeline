@@ -104,23 +104,7 @@ def fetch_weather_data():
 pipeline = dlt.pipeline(
     pipeline_name="weather_trends",
     destination="sqlalchemy",
-    dataset_name="trending_pipeline",
-    schema={
-        "latitude": {"data_type": "double"},
-        "longitude": {"data_type": "double"},
-        "elevation": {"data_type": "double"},
-        "temperature_2m": {"data_type": "double"},
-        "relativehumidity_2m": {"data_type": "double"},
-        "apparent_temperature": {"data_type": "double"},
-        "precipitation_probability": {"data_type": "double"},
-        "precipitation": {"data_type": "double"},
-        "pressure_msl": {"data_type": "double"},
-        "cloudcover": {"data_type": "double"},
-        "visibility": {"data_type": "double"},
-        "windspeed_10m": {"data_type": "double"},
-        "winddirection_10m": {"data_type": "double"},
-        "code": {"data_type": "int"}
-    }
+    dataset_name="weather_pipeline"
 )
 
 
