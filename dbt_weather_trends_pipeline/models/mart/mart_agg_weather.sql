@@ -1,0 +1,34 @@
+SELECT
+    date
+	,state
+	,city
+	,max_temp_c
+	,min_temp_c
+	,avg_temp_c
+	,max_apparent_temp_c
+	,min_apparent_temp_c
+	,avg_apparent_temp_c
+	,`max_relative_humidity_%`
+	,`min_relative_humidity_%`
+	,`avg_relative_humidity_%`
+	,`max_precipitation_probability_%`
+	,`min_precipitation_probability_%`
+	,`avg_precipitation_probability_%`
+	,max_precipitation_mm
+	,min_precipitation_mm
+	,avg_precipitation_mm
+	,max_pressure_hPa
+	,min_pressure_hPa
+	,avg_pressure_hPa
+	,`max_cloud_cover_%`
+	,`min_cloud_cover_%`
+	,`avg_cloud_cover_%`
+	,max_visibility_m
+	,min_visibility_m
+	,avg_visibility_m
+	,max_windspeed_kmph
+	,min_windspeed_kmph
+	,avg_windspeed_kmph
+    ,wind_direction
+FROM
+    {{ ref("int_weather") }}

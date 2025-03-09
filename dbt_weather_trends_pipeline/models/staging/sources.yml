@@ -6,3 +6,4 @@ sources:
     schema: weather_pipeline
     tables:
       - name: cities
+      - name: weather_trends
