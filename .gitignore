@@ -1,3 +1,4 @@
 .env
 dev_env
+airflow_env
 dlt_ingestion_pipeline/.dlt
