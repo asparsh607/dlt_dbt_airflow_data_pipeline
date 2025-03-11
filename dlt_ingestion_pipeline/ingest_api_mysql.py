@@ -3,7 +3,7 @@ import os
 import time
 import dlt
 from dotenv import load_dotenv
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 load_dotenv()
 
@@ -18,7 +18,9 @@ engine = create_engine(f"mysql+mysqlconnector://{MYSQL_USER}:{MYSQL_PASSWORD}@{M
 def fetch_city_data():
     """Fetch existing city-state pairs from MySQL using a generator."""
     with engine.connect() as connection:
-        result = connection.execute("SELECT city, state, latitude, longitude FROM cities WHERE latitude IS NOT NULL")
+        query = text("SELECT city, state, latitude, longitude FROM cities WHERE latitude IS NOT NULL AND longitude IS NOT NULL")
+        result = connection.execute(query)
+
         for row in result:
             yield row[0], row[1], row[2], row[3]
 
