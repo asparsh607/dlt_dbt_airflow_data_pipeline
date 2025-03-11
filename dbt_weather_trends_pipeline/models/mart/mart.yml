@@ -1,0 +1,173 @@
+version: 2
+
+models:
+  - name: mart_agg_weather
+    description: "Aggregated weather data by date, state, and city"
+    columns:
+      - name: date
+        description: "Date of the weather report"
+        tests:
+          - not_null
+
+      - name: state
+        description: "State of the recorded weather data"
+        tests:
+          - not_null
+
+      - name: city
+        description: "City of the recorded weather data"
+        tests:
+          - not_null
+
+      - name: max_temp_c
+        description: "Maximum temperature in Celsius"
+        tests:
+          - not_null
+          - valid_temperature
+
+      - name: min_temp_c
+        description: "Minimum temperature in Celsius"
+        tests:
+          - not_null
+          - valid_temperature
+
+      - name: avg_temp_c
+        description: "Average temperature in Celsius"
+        tests:
+          - not_null
+          - valid_temperature
+
+      - name: max_apparent_temp_c
+        description: "Max apparent temperature in Celsius"
+        tests:
+          - not_null
+          - valid_temperature
+
+      - name: min_apparent_temp_c
+        description: "Min apparent temperature in Celsius"
+        tests:
+          - not_null
+          - valid_temperature
+
+      - name: avg_apparent_temp_c
+        description: "Average apparent temperature in Celsius"
+        tests:
+          - not_null
+          - valid_temperature
+
+      - name: max_relative_humidity_pct
+        description: "Maximum relative humidity percentage"
+        tests:
+          - not_null
+
+      - name: min_relative_humidity_pct
+        description: "Minimum relative humidity percentage"
+        tests:
+          - not_null
+
+      - name: avg_relative_humidity_pct
+        description: "Average relative humidity percentage"
+        tests:
+          - not_null
+
+      - name: max_precipitation_probability_pct
+        description: "Maximum precipitation probability percentage"
+        tests:
+          - not_null
+
+      - name: min_precipitation_probability_pct
+        description: "Minimum precipitation probability percentage"
+        tests:
+          - not_null
+
+      - name: avg_precipitation_probability_pct
+        description: "Average precipitation probability percentage"
+        tests:
+          - not_null
+
+      - name: max_precipitation_mm
+        description: "Maximum precipitation in mm"
+        tests:
+          - not_null
+
+      - name: min_precipitation_mm
+        description: "Minimum precipitation in mm"
+        tests:
+          - not_null
+
+      - name: avg_precipitation_mm
+        description: "Average precipitation in mm"
+        tests:
+          - not_null
+
+      - name: max_pressure_hPa
+        description: "Maximum pressure in hPa"
+        tests:
+          - not_null
+
+      - name: min_pressure_hPa
+        description: "Minimum pressure in hPa"
+        tests:
+          - not_null
+
+      - name: avg_pressure_hPa
+        description: "Average pressure in hPa"
+        tests:
+          - not_null
+
+      - name: max_cloud_cover_pct
+        description: "Maximum cloud cover percentage"
+        tests:
+          - not_null
+
+      - name: min_cloud_cover_pct
+        description: "Minimum cloud cover percentage"
+        tests:
+          - not_null
+
+      - name: avg_cloud_cover_pct
+        description: "Average cloud cover percentage"
+        tests:
+          - not_null
+
+      - name: max_visibility_m
+        description: "Maximum visibility in meters"
+        tests:
+          - not_null
+
+      - name: min_visibility_m
+        description: "Minimum visibility in meters"
+        tests:
+          - not_null
+
+      - name: avg_visibility_m
+        description: "Average visibility in meters"
+        tests:
+          - not_null
+
+      - name: max_windspeed_kmph
+        description: "Maximum wind speed in km/h"
+        tests:
+          - not_null
+
+      - name: min_windspeed_kmph
+        description: "Minimum wind speed in km/h"
+        tests:
+          - not_null
+
+      - name: avg_windspeed_kmph
+        description: "Average wind speed in km/h"
+        tests:
+          - not_null
+
+      - name: wind_direction
+        description: "Wind direction name"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [
+                "North", "North-East", 
+                "East", "South-East",
+                "South", "South-West", 
+                "West", "North-West"
+              ]
