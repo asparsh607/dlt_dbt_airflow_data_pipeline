@@ -44,4 +44,4 @@ dlt_ingest = BashOperator(
     dag=dag
 )
 
-dlt_ingest >> dbt_run >> dbt_test
+dlt_ingest >> dbt_test >> dbt_run >> dbt_test
