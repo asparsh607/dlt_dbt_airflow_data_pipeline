@@ -4,6 +4,66 @@ sources:
   - name: ingestion
     database: weather_pipeline
     schema: weather_pipeline
-    tables:
-      - name: cities
       - name: weather_trends
+        description: "Historical weather trends data"
+        columns:
+          - name: city
+            tests:
+              - not_null
+          - name: state
+            tests:
+              - not_null
+          - name: time
+            tests:
+              - not_null
+          - name: latitude
+            tests:
+              - not_null
+          - name: longitude
+            tests:
+              - not_null
+          - name: elevation
+            tests:
+              - not_null
+          - name: temperature_2m
+            tests:
+              - not_null
+              - valid_temperature
+          - name: relativehumidity_2m
+            tests:
+              - not_null
+          - name: apparent_temperature
+            tests:
+              - not_null
+              - valid_temperature
+          - name: precipitation_probability
+            tests:
+              - not_null
+          - name: precipitation
+            tests:
+              - not_null
+          - name: pressure_msl
+            tests:
+              - not_null
+          - name: cloudcover
+            tests:
+              - not_null
+          - name: visibility
+            tests:
+              - not_null
+          - name: windspeed_10m
+            tests:
+              - not_null
+          - name: winddirection_10m
+            tests:
+              - not_null
+          - name: code
+            tests:
+              - not_null
+          - name: _dlt_load_id
+            tests:
+              - not_null
+          - name: _dlt_id
+            tests:
+              - not_null
+              - unique
