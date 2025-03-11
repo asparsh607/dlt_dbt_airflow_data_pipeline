@@ -4,6 +4,7 @@ sources:
   - name: ingestion
     database: weather_pipeline
     schema: weather_pipeline
+    tables:
       - name: weather_trends
         description: "Historical weather trends data"
         columns:
