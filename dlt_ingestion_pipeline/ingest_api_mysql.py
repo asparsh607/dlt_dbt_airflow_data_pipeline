@@ -18,7 +18,7 @@ engine = create_engine(f"mysql+mysqlconnector://{MYSQL_USER}:{MYSQL_PASSWORD}@{M
 def fetch_city_data():
     """Fetch existing city-state pairs from MySQL using a generator."""
     with engine.connect() as connection:
-        query = text("SELECT city, state, latitude, longitude FROM cities WHERE latitude IS NOT NULL")
+        query = text("SELECT city, state, latitude, longitude FROM cities WHERE latitude IS NOT NULL OR longitude IS NOT NULL")
         result = connection.execute(query)
 
         for row in result:
