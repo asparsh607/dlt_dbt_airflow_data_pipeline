@@ -38,4 +38,10 @@ dbt_run = BashOperator(
     dag=dag
 )
 
-dbt_test >> dbt_run
+dlt_ingest = BashOperator(
+    task_id='dlt_ingest',
+    bash_command=f'cd {BASE_DIR}/dlt_ingestion_pipeline/ && source ../dev_env/bin/activate && python ingest_api_mysql.py || exit 1',
+    dag=dag
+)
+
+dlt_ingest >> dbt_run >> dbt_test
