@@ -4,29 +4,6 @@ sources:
   - name: ingestion
     database: weather_pipeline
     schema: weather_pipeline
-    tables:
-      - name: cities
-        description: "List of cities and their metadata"
-        columns:
-          - name: city
-            tests:
-              - not_null
-          - name: state
-            tests:
-              - not_null
-          - name: code
-            tests:
-              - not_null
-              - accepted_values:
-                  values: [200, 400, 500]
-          - name: _dlt_load_id
-            tests:
-              - not_null
-          - name: _dlt_id
-            tests:
-              - not_null
-              - unique
-
       - name: weather_trends
         description: "Historical weather trends data"
         columns:
